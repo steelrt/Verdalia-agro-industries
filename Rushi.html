@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERDALIA AGRO INDUSTRIES | India's Leading Agrochemical Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Modern Color Scheme */
+        :root 
+	
+	{
+            --primary: #2E7D32; /* Deep Green */
+            --secondary: #FFC107; /* Golden */
+            --accent: #1565C0; /* Blue */
+            --light: #f8f9fa;
+            --dark: #212121;
+        }
+
+        /* Base Styles */
+        body 
+	{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header with Gradient */
+        header 
+	{
+            background: linear-gradient(135deg, var(--primary), #1B5E20);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content 
+	{
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 
+	{
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p 
+	{
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav 
+	{
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container 
+	{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .logo 
+	{
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .nav-links a 
+	{
+            color: var(--dark);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover 
+	{
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero 
+	{
+            background: url('Farm.avif') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before 
+	{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-content 
+	{
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h2 
+	{
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p 
+	{
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn 
+	{
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover 
+	{
+            background-color: #ffb300;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Product Categories */
+        .categories 
+	{
+            padding: 4rem 2rem;
+            background-color: var(--light);
+        }
+
+        .section-title 
+	{
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 
+	{
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h2::after 
+	{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .category-grid 
+	{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-card 
+	{
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-card:hover 
+	{
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .category-img 
+	{
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-img img 
+	{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .category-card:hover .category-img img 
+	{
+            transform: scale(1.1);
+        }
+
+        .category-content 
+	{
+            padding: 1.5rem;
+        }
+
+        .category-content h3 
+	{
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .category-content p 
+	{
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Product Tables */
+        .product-tables 
+	{
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-table 
+	{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-table caption 
+	{
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: left;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-table th, .product-table td 
+	{
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-table th 
+	{
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .product-table tr:hover 
+	{
+            background-color: #f9f9f9;
+        }
+
+        /* Contact Section */
+        .contact 
+	{
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-container 
+	{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info 
+	{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card 
+	{
+            background-color: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover 
+	{
+            transform: translateY(-5px);
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .contact-card i 
+	{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .contact-card h3 
+	{
+            margin-top: 0;
+        }
+
+        .contact-card a 	
+	{
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover 
+	{
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer 
+	{
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content 
+	{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 
+	{
+            color: var(--secondary);
+            margin-top: 0;
+        }
+
+        .footer-column ul 
+	{
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li 
+	{
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a 
+	{
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover 
+	{
+            color: white;
+        }
+
+        .social-links 
+	{
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a 
+	{
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover 
+	{
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright 
+	{
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) 
+	    {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links 
+	    {
+                margin-top: 1rem;
+            }
+            
+            .hero h2 
+	    {
+                font-size: 2rem;
+            }
+            
+            header h1
+	    {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="header-content">
+            <h1>VERDALIA AGRO INDUSTRIES</h1>
+            <p>India's Leading Agrochemical Company | Premium Quality Bio Stimulant Micronutrient and PGR </p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"> VERDALIA AGRO INDUSTRIES </div>
+            <div class="nav-links">
+                <a href="#products">Products</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:+91 8527792280 / +91 8527792280" class="btn">Call Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Innovative Agricultural Solutions</h2>
+            <p>High-quality agrochemicals and fertilizers to maximize your crop yield and quality</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="categories" id="products">
+        <div class="section-title">
+            <h2>Our Product Categories</h2>
+        </div>
+        
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="hamic.webp" alt="Humic Acid Series">
+                </div>
+                <div class="category-content">
+                    <h3>Humic Acid Series</h3>
+                    <p>Premium quality bio stimulant micronutrient and pgr</p>
+                    <a href="#humic-acid" class="btn">View Products</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="aminopowder.png" alt="Amino Acid Series">
+                </div>
+                <div class="category-content">
+                    <h3>Amino Acid Series</h3>
+                    <p>High-concentration amino acid formulations for plant growth and stress resistance.</p>
+                    <a href="#amino-acid" class="btn">View Products</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="Fulvic.webp" alt="Fulvic Acid Series">
+                </div>
+                <div class="category-content">
+                    <h3>Fulvic Acid Series</h3>
+                    <p>Enhanced fulvic acid products for improved nutrient transportation and plant vitality.</p>
+                    <a href="#fulvic-acid" class="btn">View Products</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="EDTA Chelated.jpg" alt="EDTA Chelated">
+                </div>
+                <div class="category-content">
+                    <h3>EDTA Chelated</h3>
+                    <p>Complete range of EDTA chelated micronutrients for optimal plant nutrition.</p>
+                    <a href="#edta-chelated" class="btn">View Products</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="seaweed-acid.webp" alt="Seaweed Acid">
+                </div>
+                <div class="category-content">
+                    <h3>Seaweed Acid</h3>
+                    <p>Natural seaweed extracts rich in growth hormones and micronutrients.</p>
+                    <a href="#seaweed-acid" class="btn">View Products</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img">
+                    <img src="water.webp" alt="Water Soluble Fertilizers">
+                </div>
+                <div class="category-content">
+                    <h3>Water Soluble Fertilizers</h3>
+                    <p>Complete range of NPK formulations for fertigation and foliar application.</p>
+                    <a href="#water-soluble" class="btn">View Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tables -->
+    <section class="product-tables">
+        <table class="product-table" id="humic-acid">
+            <caption>HUMIC ACID SERIES</caption>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Packaging</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Super "F" Humate Shiny Flakes</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Super Potassium "F" Humate Shiny Flakes (Grade-1)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Super Potassium "F" Humate Shiny Flakes (Super Grade)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="product-table" id="amino-acid">
+            <caption>AMINO ACID SERIES</caption>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Packaging</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amino Acid Powder 60% (Free Flow)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Amino Acid Powder 80% Soya (Free now)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Amino Acid Powder 80% Compound (Free Flow)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Amino Acid Powder Super Grade 80% (Plant Origin)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Amino Acid Powder Super Grade Yellow 80% (Plant Origin)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="product-table" id="fulvic-acid">
+            <caption>FULVIC ACID SERIES</caption>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Packaging</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Potassium Fulvic Acid (Grade 1)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Potassium Fulvic Acid 80% (Super Grade)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="product-table" id="edta-chelated">
+            <caption>EDTA CHELATED MICRONUTRIENTS</caption>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Packaging</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Combi-Mix EDTA Chelated (MS Grade II)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Zinc (Zn) EDTA Chelated – 12%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Ferrous (FE)EDTA Chelated – 12%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Calcium (CA) EDTA Chelated – 10%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Magnesium (MG) EDTA Chelated – 6%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Manganese (MN) EDTA Chelated – 12%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Copper (Cu) EDTA Chelated -12%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Ferrous (Fe) EDDHA - 6%</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Calcium + Boron EDTA Chelated</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Calcium + Boron + Magnesium EDTA</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+                <tr>
+                    <td>Zinc (Zn) + Boron (B)</td>
+                    <td>25 kg crafted bag with liner</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="product-table" id="water-soluble">
+            <caption>WATER SOLUBLE FERTILIZERS</caption>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Packaging</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>19 : 19 : 19 - NPK</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>12 : 61: 00 - (MAP) Mono Ammonium Phosphate</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>00 : 52 : 34 - (MKP) Mono Potassium Phosphate</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>13 : 40 : 13 - NPK</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>13 : 00 : 45 - Potassium Nitrate</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>Calcium Nitrate - (18:8:00:00:15:5)</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>00 : 00 : 50 - Potassium Sulphate</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>Ammonium sulphate</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>Urea Phosphate - 17:44:00</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>18 : 18 : 18 - NPK</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+                <tr>
+                    <td>20 : 20 : 20 - NPK</td>
+                    <td>25 kg HDPE bag</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Contact VERDALIA AGRO INDUSTRIES </h2>
+            <p>Get in touch with our team for product inquiries, technical support, or partnership opportunities</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone</h3>
+                    <p><a href="tel: +91 8527792280 / +91 7028870417"> +91 8527792280 / +91 7028870417 </a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:verdaliaindia@gmail.com">verdaliaindia@gmail.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Address</h3>
+                    <p>412, Plot No.B- 8,9 Biradvadi, Chakan MIDC,<br>Chakan-Talegaon Road, Chakan, Pune - 410504</p>
+                </div>
+		<div class="contact-card">
+   		    <i class="fab fa-whatsapp"></i> <!-- WhatsApp logo -->
+    		    <h3>WhatsApp</h3>
+    		    <p><a href="https://wa.me/ +91 8527792280 / +91 7028870417 "> +91 8527792280 / +91 7028870417 </a></p>
+		</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About VERDALIA AGRO INDUSTRIES </h3>
+                <p>India's leading agrochemical company providing premium quality agricultural inputs since 2005.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Downloads</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Product Categories</h3>
+                <ul>
+                    <li><a href="#humic-acid">Humic Acid Series</a></li>
+                    <li><a href="#amino-acid">Amino Acid Series</a></li>
+                    <li><a href="#fulvic-acid">Fulvic Acid Series</a></li>
+                    <li><a href="#edta-chelated">EDTA Chelated</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +91 8527792280 / +91 7028870417 </li>
+                    <li><i class="fas fa-envelope"></i> verdaliaindia@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 VERDALIA AGRO INDUSTRIES PVT. LTD. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
